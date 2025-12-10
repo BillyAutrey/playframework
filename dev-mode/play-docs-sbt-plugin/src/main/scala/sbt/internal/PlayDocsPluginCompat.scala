@@ -13,7 +13,7 @@ trait PlayDocsPluginCompat {
   }
 
   def evaluateConfigurations(
-      sbtFile: java.io.File,
+      sbtFile: FileRef,
       imports: Seq[String],
       classLoader: ClassLoader,
       eval: () => Eval

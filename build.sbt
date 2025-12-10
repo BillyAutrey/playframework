@@ -494,6 +494,17 @@ lazy val nonUserProjects = Seq[ProjectReference](
   SbtScriptedToolsProject,
   PlayBillOfMaterials
 )
+lazy val sbtPluginProjects = Seq[ProjectReference](
+  PlayBillOfMaterials,
+  PlayRunSupportProject,
+  SbtRoutesCompilerProject,
+  PlayDocsSbtPlugin,
+  PlayDocsProject,
+  PlayBuildLinkProject,
+  SbtScriptedToolsProject
+)
+
+lazy val SbtPluginAggregate = Project("Sbt-Plugin-Aggregate", file("dev-mode")).aggregate(sbtPluginProjects: _*)
 
 lazy val PlayFramework = Project("Play-Framework", file("."))
   .enablePlugins(PlayRootProject)

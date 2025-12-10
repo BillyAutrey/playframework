@@ -31,6 +31,7 @@ import org.pegdown.plugins.ToHtmlSerializerPlugin
 import org.playframework.docs.sbtplugin.Imports._
 import play.doc._
 import play.sbt.Colors
+import play.sbt.PluginCompat
 import Imports.PlayDocsKeys._
 
 // Test that all the docs are renderable and valid
@@ -348,7 +349,7 @@ object PlayDocsValidation {
     val stateValue = state.value
     if (!file.exists) {
       println("Generating report...")
-      Project
+      PluginCompat
         .runTask(translationCodeSamplesReport, stateValue)
         .get
         ._2
